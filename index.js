@@ -10,7 +10,7 @@ config = {
 
 const tail = new Tail('/var/log/nginx/access.log');
 
-if(!file.exists(`./logs/${config.booterName}.txt`)){
+if(!fs.existsSync(`./logs/${config.booterName}.txt`)){
     fs.writeFile(`./logs/${config.booterName}.txt`, "\n", function(err) {
         if(err) {
             console.log(`Could not create temporary IP storage file. ${err}`);
