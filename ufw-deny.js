@@ -10,7 +10,7 @@ if(!process.argv[2]){
 const file = process.argv[2];
 
 var lineReader = readline.createInterface({
-    input: fs.createReadStream(file)
+    input: fs.createReadStream(`./logs/${file}`)
 });
 
 if(!fs.existsSync(`./ufw/${file}`)) {
