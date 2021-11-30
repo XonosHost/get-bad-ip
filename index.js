@@ -10,8 +10,8 @@ config = {
 
 const tail = new Tail('/var/log/nginx/access.log');
 
-if(!file.exists(`${config.booterName}.txt`)){
-    fs.writeFile(`${config.booterName}.txt`, "\n", function(err) {
+if(!file.exists(`./logs/${config.booterName}.txt`)){
+    fs.writeFile(`./logs/${config.booterName}.txt`, "\n", function(err) {
         if(err) {
             console.log(`Could not create temporary IP storage file. ${err}`);
             process.exit(1);
@@ -25,7 +25,7 @@ tail.on("line", function(data){
     ipAddr = data.split(" ")[0];
     if(!recordedips.includes(ipAddr)){
         recordedips.push(ipAddr);
-        fs.appendFile(`${config.booterName}.txt`, `${ipAddr}\n`, function(err) {
+        fs.appendFile(`./logs/${config.booterName}.txt`, `${ipAddr}\n`, function(err) {
             if(err) {
                 console.log(err);
                 process.exit(1);
