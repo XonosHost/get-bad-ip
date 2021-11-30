@@ -1,0 +1,11 @@
+{
+  "name": "get-bad-ip",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/XonosHost/get-bad-ip.git",
+  "author": "Ben Caulfield <ben@xonos.host>",
+  "license": "MIT",
+  "dependencies": {
+    "tail": "^2.2.4"
+  }
+}
