@@ -1,6 +1,11 @@
 const fs = require('fs'),
     readline = require('readline');
 
+if(!process.argv[2]){
+    console.log("Usage: node nginx-deny.js <file>");
+    process.exit(1);
+}
+
 const file = process.argv[2];
 
 var lineReader = readline.createInterface({
